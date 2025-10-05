@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurikulum - SDN 25 Sabbamparu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        
+        [x-cloak] { display: none !important; }
+        .accordion-content {
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="./gambar/logo-removebg-preview.png" alt="Logo Sekolah" class="h-12 w-12 mr-3">
+                <div class="text-left">
+                    <a href="index.html" class="text-lg font-bold text-gray-800">SDN 25 SABBAMPARU</a>
+                    <p class="text-xs text-gray-500">Kota Palopo</p>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 font-medium">
+                <a href="index.html" class="text-gray-600 hover:text-sky-600 transition duration-300">Beranda</a>
+                <a href="profil.html" class="text-gray-600 hover:text-sky-600 transition duration-300">Profil</a>
+                <a href="guru.html" class="text-gray-600 hover:text-sky-600 transition duration-300">Guru</a>
+                <a href="siswa.html" class="text-gray-600 hover:text-sky-600 transition duration-300">Siswa</a>
+                <a href="kurikulum.html" class="text-sky-600 border-b-2 border-sky-600 pb-1">Kurikulum</a>
+                <a href="modul.html" class="text-gray-600 hover:text-sky-600 transition duration-300">Modul</a>
+                <a href="contact.html" class="bg-sky-600 text-white px-4 py-2 rounded-full hover:bg-sky-700 transition duration-300">Hubungi Kami</a>
+            </div>
+            <button class="md:hidden flex items-center">
+                <i class="fas fa-bars text-gray-600 text-xl"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800">Struktur Kurikulum Merdeka</h1>
+            <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Fokus pada materi esensial, pengembangan karakter, dan kompetensi peserta didik secara mendalam.</p>
+        </div>
+
+        <div x-data="{ activeTab: 'faseA' }" class="mb-12">
+            <div class="flex justify-center border-b border-gray-300">
+                <button @click="activeTab = 'faseA'" :class="{ 'border-sky-500 text-sky-600': activeTab === 'faseA', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'faseA' }" class="py-4 px-6 block font-medium border-b-2 focus:outline-none transition-colors duration-300">
+                    Fase A (Kelas 1 & 2)
+                </button>
+                <button @click="activeTab = 'faseB'" :class="{ 'border-sky-500 text-sky-600': activeTab === 'faseB', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'faseB' }" class="py-4 px-6 block font-medium border-b-2 focus:outline-none transition-colors duration-300">
+                    Fase B (Kelas 3 & 4)
+                </button>
+                <button @click="activeTab = 'faseC'" :class="{ 'border-sky-500 text-sky-600': activeTab === 'faseC', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'faseC' }" class="py-4 px-6 block font-medium border-b-2 focus:outline-none transition-colors duration-300">
+                    Fase C (Kelas 5 & 6)
+                </button>
+            </div>
+
+            <div x-show="activeTab === 'faseA'" x-cloak class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4"><div class="bg-green-100 text-green-600 p-3 rounded-full mr-4"><i class="fas fa-moon"></i></div><h3 class="text-xl font-bold text-gray-800">Pendidikan Agama Islam</h3></div>
+                        <p class="text-gray-600">Mengenal dasar-dasar akidah, akhlak, fikih, serta kisah para nabi.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4"><div class="bg-red-100 text-red-600 p-3 rounded-full mr-4"><i class="fas fa-shield-alt"></i></div><h3 class="text-xl font-bold text-gray-800">Pendidikan Pancasila</h3></div>
+                        <p class="text-gray-600">Menanamkan nilai-nilai luhur Pancasila dan Bhinneka Tunggal Ika.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4"><div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4"><i class="fas fa-book-open"></i></div><h3 class="text-xl font-bold text-gray-800">Bahasa Indonesia</h3></div>
+                        <p class="text-gray-600">Mengembangkan kemampuan menyimak, membaca, berbicara, dan menulis.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4"><div class="bg-yellow-100 text-yellow-600 p-3 rounded-full mr-4"><i class="fas fa-calculator"></i></div><h3 class="text-xl font-bold text-gray-800">Matematika</h3></div>
+                        <p class="text-gray-600">Membangun pemahaman intuisi bilangan, geometri, dan analisis data dasar.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4"><div class="bg-orange-100 text-orange-600 p-3 rounded-full mr-4"><i class="fas fa-futbol"></i></div><h3 class="text-xl font-bold text-gray-800">PJOK</h3></div>
+                        <p class="text-gray-600">Mendorong gaya hidup sehat dan aktif melalui keterampilan gerak fundamental.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4"><div class="bg-purple-100 text-purple-600 p-3 rounded-full mr-4"><i class="fas fa-palette"></i></div><h3 class="text-xl font-bold text-gray-800">Seni Rupa</h3></div>
+                        <p class="text-gray-600">Mengasah kreativitas dan kepekaan artistik melalui berbagai media rupa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div x-show="activeTab === 'faseB'" x-cloak class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4"><div class="bg-teal-100 text-teal-600 p-3 rounded-full mr-4"><i class="fas fa-leaf"></i></div><h3 class="text-xl font-bold text-gray-800">IPAS</h3></div>
+                        <p class="text-gray-600">Integrasi pemahaman sains dan sosial untuk memahami lingkungan sekitar.</p>
+                    </div>
+                </div>
+                 <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4"><div class="bg-indigo-100 text-indigo-600 p-3 rounded-full mr-4"><i class="fas fa-language"></i></div><h3 class="text-xl font-bold text-gray-800">Bahasa Inggris</h3></div>
+                        <p class="text-gray-600">Kemampuan berkomunikasi dasar dalam Bahasa Inggris secara lisan dan tulisan.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-200 rounded-lg shadow-lg overflow-hidden flex items-center justify-center text-center p-6">
+                    <p class="text-gray-600 italic">Mata pelajaran lainnya merupakan pendalaman dari Fase A.</p>
+                </div>
+            </div>
+
+            <div x-show="activeTab === 'faseC'" x-cloak class="mt-8 text-center p-8 bg-white rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-gray-800">Fase C (Kelas 5 & 6)</h3>
+                <p class="text-gray-600 mt-2">Pada fase ini, siswa akan mendalami materi lebih lanjut, mempersiapkan diri untuk jenjang pendidikan berikutnya dengan pemahaman konsep yang lebih kuat dan kemampuan analisis yang lebih tajam.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 SDN 25 Sabbamparu. Membangun masa depan melalui kurikulum yang relevan.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
